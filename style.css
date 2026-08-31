@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f6fc;
+    color: #242024;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    width: 100%;
+    padding: 20px 7%;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e1ee;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #6d28a9;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #4b4450;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #7b2cbf;
+}
+
+.hero {
+    min-height: 88vh;
+    padding: 70px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    background: linear-gradient(135deg, #faf7ff, #eee4f8);
+}
+
+.hero-name h1 {
+    font-size: clamp(55px, 8vw, 110px);
+    color: #6d28a9;
+    line-height: 0.9;
+    font-weight: 700;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 320px;
+    height: 400px;
+    object-fit: cover;
+    border: 8px solid #ffffff;
+   
+}
+
+.hero-info {
+    padding: 20px;
+}
+
+.small-text {
+    color: #8a5aa8;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.hero-info h2 {
+    color: #35134f;
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.hero-buttons a {
+    padding: 11px 20px;
+    border-radius: 6px;
+    background: #722bb0;
+    color: white;
+    font-size: 14px;
+}
+
+.hero-buttons a:last-child {
+    background: transparent;
+    color: #722bb0;
+    border: 1px solid #722bb0;
+}
+
+section {
+    padding: 90px 7%;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.section-heading span {
+    color: #9a68b8;
+    font-size: 14px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    color: #35134f;
+}
+
+.about {
+    background: #ffffff;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.about-content > div:first-child {
+    font-size: 18px;
+    color: #5d555f;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+}
+
+.about-details {
+    display: grid;
+    gap: 15px;
+}
+
+
+.about-details span {
+    display: block;
+    font-size: 13px;
+    color: #856493;
+    margin-bottom: 4px;
+}
+
+.about-details strong {
+    color: #3c2149;
+}
+
+.skills {
+    background: #f5eff9;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e3d5eb;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(88, 40, 110, 0.1);
+}
+
+.skill-card h3 {
+    color: #7026a5;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.skill-card p {
+    color: #625966;
+    margin-bottom: 7px;
+    font-size: 15px;
+}
+
+.contact {
+    background: #ffffff;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.contact-content h3 {
+    color: #35134f;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.contact-content p {
+    color: #625966;
+    max-width: 450px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d9cbe1;
+    border-radius: 5px;
+    outline: none;
+    font-family: inherit;
+    background: #fbf9fc;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #7b2cbf;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    width: fit-content;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    background: #722bb0;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover,
+.hero-buttons a:hover {
+    background: #5d208e;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #35134f;
+    color: #d9c9e2;
+    font-size: 14px;
+}
+

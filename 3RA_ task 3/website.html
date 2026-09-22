@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Layout Practice</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .layout {
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .menu {
+            width: 230px;
+            background: #1f2937;
+            color: #fff;
+            padding: 25px 18px;
+            flex-shrink: 0;
+        }
+
+        .menu h2 {
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        .menu ul {
+            list-style: none;
+        }
+
+        .menu li {
+            margin-bottom: 6px;
+        }
+
+        .menu a {
+            display: block;
+            color: #d1d5db;
+            text-decoration: none;
+            padding: 10px 12px;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+
+        .menu a:hover {
+            background: #374151;
+            color: #fff;
+        }
+
+        .content {
+            flex: 1;
+            padding: 35px;
+            max-width: 1500px;
+        }
+
+        .intro {
+            margin-bottom: 35px;
+        }
+
+        .intro h1 {
+            font-size: 32px;
+            margin-bottom: 7px;
+            color: #111827;
+        }
+
+        .intro p {
+            color: #6b7280;
+            max-width: 700px;
+        }
+
+        .products,
+        .articles {
+            margin-bottom: 45px;
+        }
+
+        .products h2,
+        .articles h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .product-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 9px;
+            padding: 18px;
+            width: 300px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+            transition: 0.2s;
+        }
+
+        .product:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.09);
+        }
+
+        .product-img {
+            height: 165px;
+            background: #e9edf1;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            font-size: 19px;
+            margin-bottom: 7px;
+        }
+
+        .product p {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 13px;
+        }
+
+        .cost {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 14px;
+        }
+
+        .buy {
+            display: inline-block;
+            background: #2563eb;
+            color: #fff;
+            text-decoration: none;
+            padding: 9px 16px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .buy:hover {
+            background: #1d4ed8;
+        }
+
+        .article-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .article {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .article h3 {
+            margin-bottom: 9px;
+            font-size: 18px;
+        }
+
+        .article p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .article a {
+            display: inline-block;
+            margin-top: 12px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .article a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+            .layout {
+                flex-direction: column;
+            }
+
+            .menu {
+                width: 100%;
+                padding: 18px;
+            }
+
+            .menu h2 {
+                margin-bottom: 12px;
+            }
+
+            .menu ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+
+            .menu li {
+                margin: 0;
+            }
+
+            .content {
+                padding: 28px 22px;
+            }
+
+            .product {
+                flex: 1 1 280px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .content {
+                padding: 24px 16px;
+            }
+
+            .intro h1 {
+                font-size: 27px;
+            }
+
+            .product-row {
+                flex-direction: column;
+            }
+
+            .product {
+                width: 100%;
+            }
+
+            .article-row {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu ul {
+                display: block;
+            }
+
+            .menu a {
+                padding: 8px 10px;
+            }
+
+            .intro h1 {
+                font-size: 24px;
+            }
+
+            .products h2,
+            .articles h2 {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="menu">
+            <h2>My Website</h2>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+
+            <section class="intro">
+                <h1>Responsive Web Layouts</h1>
+                <p>
+                    A simple responsive website built with HTML, CSS Flexbox,
+                    the box model and media queries.
+                </p>
+            </section>
+
+            <section class="products">
+                <h2>Featured Products</h2>
+
+                <div class="product-row">
+
+                    <div class="product">
+                        <div class="product-img">
+                            Product Image
+                        </div>
+
+                        <h3>Wireless Headphones</h3>
+
+                        <p>
+                            Comfortable wireless headphones with clear sound
+                            and a simple modern design.
+                        </p>
+
+                        <div class="cost">₹1485</div>
+
+                        <a href="#" class="buy">Buy Now</a>
+                    </div>
+
+                    <div class="product">
+                        <div class="product-img">
+                            Product Image
+                        </div>
+
+                        <h3>Smart Watch</h3>
+
+                        <p>
+                            Track your daily activity, notifications and
+                            workouts with this lightweight smartwatch.
+                        </p>
+
+                        <div class="cost">₹2,415,511</div>
+
+                        <a href="#" class="buy">Buy Now</a>
+                    </div>
+
+                    <div class="product">
+                        <div class="product-img">
+                            Product Image
+                        </div>
+
+                        <h3>Mechanical Keyboard</h3>
+
+                        <p>
+                            Compact mechanical keyboard designed for
+                            comfortable typing and everyday use.
+                        </p>
+
+                        <div class="cost">₹18,484.89</div>
+
+                        <a href="#" class="buy">Buy Now</a>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="articles">
+                <h2>Latest Blog Posts</h2>
+
+                <div class="article-row">
+
+                    <article class="article">
+                        <h3>Getting Started With HTML</h3>
+
+                        <p>
+                            Learn the basic structure of a webpage and
+                            understand how HTML elements work together.
+                        </p>
+
+                        <a href="#">Read More</a>
+                    </article>
+
+                    <article class="article">
+                        <h3>Understanding CSS Flexbox</h3>
+
+                        <p>
+                            Flexbox makes it easier to create flexible
+                            layouts that work across different screen sizes.
+                        </p>
+
+                        <a href="#">Read More</a>
+                    </article>
+
+                    <article class="article">
+                        <h3>Responsive Web Design</h3>
+
+                        <p>
+                            Media queries help websites adjust their layout
+                            for phones, tablets and desktop screens.
+                        </p>
+
+                        <a href="#">Read More</a>
+                    </article>
+
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
+
